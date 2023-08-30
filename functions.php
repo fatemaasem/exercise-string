@@ -32,8 +32,47 @@ function replace_the_first_given_str1_from_curren_str_with_given_str2($curren_st
    echo preg_replace('/'.$given_str1.'/',$given_str2,$curren_str,1);
  
 }
-function fun2(){
-    
+function to_find_the_first_character_that_is_different_between_two_strings($str1,$str2){
+    $char1='';
+    $char2='';
+    $ans=-1;
+    $min_length=min(strlen($str1),strlen($str2));
+   for ($index=0;$index< $min_length;$index++){
+    if($str1[$index]!=$str2[$index]){
+        $char1=$str1[$index];
+        $char2=$str2[$index];
+        $ans=1;
+        break;
+    }
+   }
+   if($ans==1){
+    echo $char1." ".$char2."<br>";
+   }
+}
+function string_to_array($str){
+    echo "<pre>";
+    print_r(explode("\n",$str));
+    echo "/pre";
+
+}
+function Write_to_get_filename_component_of_the_path($path){
+$start=strrpos($path,'/')+1;$end=strrpos($path,'.');
+$len=$end-$start;
+echo substr($path,$start,$len);
+
+}
+function insert_string_at_specified_position_in_given_string($str,$search1,$search2,$replace){
+    echo "$search1 $search2<br>";
+    echo str_replace("$search1 $search2","$search1 $replace $search2",$str);
+   
+}
+function get_the_first_word_of_sentence($str){
+    $len=strpos(trim($str),' ');
+    echo substr(trim($str),0,$len) ."<br>";
+}
+function remove_part_of_string($search,$subject){
+   echo  str_replace($search,'',$subject);
 }
 
+remove_part_of_string('fox', 'The quick brown fox jumps fox over the lazy dog')
 ?>
