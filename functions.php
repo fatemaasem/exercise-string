@@ -73,6 +73,12 @@ function get_the_first_word_of_sentence($str){
 function remove_part_of_string($search,$subject){
    echo  str_replace($search,'',$subject);
 }
+function  replace_multiple_characters_from_th_string($str){
+   echo implode (" ",str_split(str_replace(['/','+','.',':','"','*','\\','-'],'',$str)));
+}
+function select_first_5_words_from_string($str){
+print_r (array_slice((explode(' ',$str)),0,5));
+}
 
-remove_part_of_string('fox', 'The quick brown fox jumps fox over the lazy dog')
+
 ?>
